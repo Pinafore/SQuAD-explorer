@@ -155,7 +155,8 @@ gulp.task('copy_models', function () {
 
 gulp.task('connect', function () {
   connect.server({
-    root: '.'
+    root: '.',
+    host: '0.0.0.0'
   })
 })
 
