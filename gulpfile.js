@@ -17,9 +17,9 @@ var build_dir = 'SQuAD-explorer/' // good to have this be the same as the repo n
 
 var rankEntries = function (entries) {
   entries.sort(function (a, b) {
-    var f1Diff = Math.sign(b.f1 - a.f1)
-    var emDiff = Math.sign(b.em - a.em)
-    return f1Diff + emDiff
+    var eoqDiff = Math.sign(b.eoq_acc - a.eoq_acc)
+    var curveDiff = Math.sign(b.curve - a.curve)
+    return eoqDiff + curveDiff
   })
 
   for (var i = 0; i < entries.length; i++) {
@@ -29,7 +29,7 @@ var rankEntries = function (entries) {
     } else {
       var prevEntry = entries[i - 1]
       var rank = prevEntry.rank
-      if (entry.em < prevEntry.em && entry.f1 < prevEntry.f1) rank++
+      if (entry.eoq_acc < prevEntry.eoq_acc && entry.curve < prevEntry.curve) rank++
       entry.rank = rank
     }
   }
@@ -59,14 +59,14 @@ var parseCompEntries = function (comp_file) {
         entry.link = description.substr(description.lastIndexOf('http')).trim()
       }
       entry.date = o_entry.submission.created
-      entry.em = parseFloat(o_entry.scores.exact_match)
-      entry.f1 = parseFloat(o_entry.scores.f1)
-      if (!(entry.em >= 0)) throw 'Score invalid'
-      if (entry.em < 50) throw 'Score too low'
+      entry.eoq_acc = parseFloat(o_entry.scores.eoq_acc)
+      entry.curve = parseFloat(o_entry.scores.curve)
+      if (!(entry.eoq_acc >= 0)) throw 'Score invalid'
+      if (entry.eoq_acc < 0) throw 'Score too low'
       if (entry.model_name === '') {
         entry.model_name = 'Unnamed submission by ' + entry.user
       }
-      // if (entry.em > 50 && entry.f1 > 60) {
+      // if (entry.eoq_acc > 0 && entry.curve> 60) {
       entries.push(entry)
     } catch (err) {
       console.error(err)
@@ -93,8 +93,8 @@ var parseEntries = function (htmlStr) {
       entry.link = entry.description.substr(entry.description.lastIndexOf('http')).trim()
     }
     delete entry.description
-    entry.f1 = parseFloat(cells.eq(4).text())
-    entry.em = parseFloat(cells.eq(3).text())
+    entry.curve = parseFloat(cells.eq(4).text())
+    entry.eoq_acc = parseFloat(cells.eq(3).text())
     entry.date = cells.eq(2).text().trim()
     entries.push(entry)
   })
@@ -119,12 +119,6 @@ gulp.task('js', function () {
     .pipe(gulp.dest('./' + build_dir + 'javascripts/'))
 })
 
-gulp.task('copy_dataset', function () {
-  gulp
-    .src('dataset/*')
-    .pipe(gulp.dest('./' + build_dir + 'dataset/'))
-})
-
 gulp.task('scrape_website', function (cb) {
   var Nightmare = require('nightmare')
   var fs = require('fs')
@@ -147,12 +141,6 @@ gulp.task('scrape_website', function (cb) {
   })
 })
 
-gulp.task('copy_models', function () {
-  gulp
-    .src('models/*')
-    .pipe(gulp.dest('./' + build_dir + 'models/'))
-})
-
 gulp.task('connect', function () {
   connect.server({
     root: '.',
@@ -160,82 +148,18 @@ gulp.task('connect', function () {
   })
 })
 
-var dataset_folder = './dataset/'
-var filepaths = [
-  dataset_folder + 'dev-v1.1.json'
-  // dataset_folder + 'train-v1.1.json',
-  // dataset_folder + 'dev-v1.0.json',
-  // dataset_folder + 'train-v1.0.json'
-]
-
-var exploration_tasks = []
-
-filepaths.forEach(function (filename) {
-  var article_generations = []
-  var build_prefix = 'explore/'
-
-  var json_file = require(filename)
-  var version = json_file.version
-  var split = path.basename(filename, '.json').split('-')[0]
-  var json_data = json_file.data
-  var version_and_split = version + '/' + split
-
-  json_data.forEach(function (article) {
-    var name = version_and_split + '/' + article['title']
-    gulp.task(name, function () {
-      return gulp.src('views/article.pug')
-        .pipe(data(function () {
-          return article
-        }))
-        .pipe(pug())
-        .pipe(rename(name + '.html'))
-        .pipe(gulp.dest('./' + build_dir + build_prefix))
-    })
-    article_generations.push(name)
-    exploration_tasks.push(name)
-  })
-
-  // models
-  var models_folder = './models/'
-  var models = fs.readdirSync(models_folder).map(
-    function (a) { return a.slice(0, -5) })
-
-  var list_task_name = version_and_split + '/' + 'index'
-  exploration_tasks.push(list_task_name)
-  gulp.task(list_task_name, function () {
-    return gulp.src('views/explore.pug')
-      .pipe(data(function () {
-        return {
-          'articles': article_generations,
-          'prefix': build_prefix,
-          'version': version,
-          'split': split,
-          'models': models
-        }
-      }))
-      .pipe(pug())
-      .pipe(rename(list_task_name + '.html'))
-      .pipe(gulp.dest('./' + build_dir + build_prefix))
-  })
-})
-
 gulp.task('process_comp_output', function (cb) {
   var jsonfile = require('jsonfile')
-  var entries1 = parseCompEntries('./out-v1.1.json')
-  var entries2 = parseCompEntries('./out-v2.0.json')
-  jsonfile.writeFile('./results1.1.json', entries1, function (err){
-    if (err) return cb(err)
-    jsonfile.writeFile('./results2.0.json', entries2, cb)
-  })
+  var entries2 = parseCompEntries('./out-qanta.json')
+  jsonfile.writeFile('./results-qanta.json', entries2, cb)
 })
 
 gulp.task('generate_index', ['process_comp_output'], function () {
-  var test_1 = require('./results1.1.json')
-  var test_2 = require('./results2.0.json')
+  var test_2 = require('./results-qanta.json')
   var moment = require('moment')
   return gulp.src('views/index.pug')
       .pipe(data(function () {
-        return { 'test1': test_1,
+        return {
           'test2': test_2,
           'moment': moment}
       }))
@@ -260,6 +184,5 @@ gulp.task('deploy', function () {
     .pipe(ghPages())
 })
 
-gulp.task('generate_exploration', exploration_tasks)
-gulp.task('generate', ['bower', 'generate_exploration', 'generate_index', 'process_comp_output'])
-gulp.task('default', ['generate', 'correct_link_paths', 'image', 'js', 'css', 'copy_dataset', 'copy_models'])
+gulp.task('generate', ['bower', 'generate_index', 'process_comp_output'])
+gulp.task('default', ['generate', 'correct_link_paths', 'image', 'js', 'css'])
