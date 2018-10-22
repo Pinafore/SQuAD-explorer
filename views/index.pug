@@ -18,8 +18,10 @@ mixin squad_2_model_display(group, is_test)
       if is_test
         th Rank
       th Model
+      th sent1_acc
       th eoq_acc
       th curve
+    - var largest_sent1_acc = Math.max.apply(null, group.map(function (model) { return model.sent1_acc; }))
     - var largest_eoq_acc = Math.max.apply(null, group.map(function (model) { return model.eoq_acc; }))
     - var largest_curve = Math.max.apply(null, group.map(function (model) { return model.curve; }))
     each model in group
@@ -33,6 +35,11 @@ mixin squad_2_model_display(group, is_test)
           p.institution #{model.institution}
           if model.link
             a.link(href=model.link) #{model.link}
+        td
+          if model.sent1_acc == largest_sent1_acc
+            b #{model.sent1_acc.toPrecision(5)}
+          else
+            | #{model.sent1_acc.toPrecision(5)}
         td
           if model.eoq_acc == largest_eoq_acc
             b #{model.eoq_acc.toPrecision(5)}
@@ -75,12 +82,13 @@ block content
               .infoHeadline
                 h2 Have Questions?
               p 
-                | Please send your questions to our a(href="https://groups.google.com/forum/#!forum/qanta") google group.
+                | Please send your questions to our 
+                a(href="https://groups.google.com/forum/#!forum/qanta") google group.
         .col-md-7
           .infoCard
             .infoBody
               .infoHeadline
                 h2 Leaderboard
               p
-              | TODO We evaluate each system with two metrics: end-of-question accuracy (eoq_acc) and an average of accuracy weighted by buzzing position that we call curve score (curve). 
+              | TODO We evaluate each system with three metrics: accuracy at the end of the first sentence (sent1_acc), end-of-question accuracy (eoq_acc), and an average accuracy weighted by buzzing position that we call curve score (curve). 
               +squad_2_model_display(test2, true)
