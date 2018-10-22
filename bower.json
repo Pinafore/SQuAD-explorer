@@ -1,12 +1,12 @@
 {
-  "name": "squad-explorer",
+  "name": "qanta-leaderboard",
   "description": "",
   "main": "gulpfile.js",
   "authors": [
-    "Pranav Rajpurkar"
+    "Shi Feng"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/rajpurkar/SQuAD-explorer",
+  "homepage": "https://github.com/Pinafore/qanta-leaderboard",
   "private": true,
   "ignore": [
     "**/.*",
