@@ -17,9 +17,8 @@ var build_dir = 'qanta-leaderboard/' // good to have this be the same as the rep
 
 var rankEntries = function (entries) {
   entries.sort(function (a, b) {
-    var eoqDiff = Math.sign(b.eoq_acc - a.eoq_acc)
     var curveDiff = Math.sign(b.curve - a.curve)
-    return eoqDiff + curveDiff
+    return curveDiff
   })
 
   for (var i = 0; i < entries.length; i++) {
@@ -29,7 +28,7 @@ var rankEntries = function (entries) {
     } else {
       var prevEntry = entries[i - 1]
       var rank = prevEntry.rank
-      if (entry.eoq_acc < prevEntry.eoq_acc && entry.curve < prevEntry.curve) rank++
+      if (entry.curve < prevEntry.curve) rank++
       entry.rank = rank
     }
   }
@@ -59,14 +58,16 @@ var parseCompEntries = function (comp_file) {
         entry.link = description.substr(description.lastIndexOf('http')).trim()
       }
       entry.date = o_entry.submission.created
+      entry.sent1_acc = parseFloat(o_entry.scores.sent1_acc)
       entry.eoq_acc = parseFloat(o_entry.scores.eoq_acc)
       entry.curve = parseFloat(o_entry.scores.curve)
+      if (!(entry.sent1_acc >= 0)) throw 'Score invalid'
+      if (entry.sent1_acc < 0) throw 'Score too low'
       if (!(entry.eoq_acc >= 0)) throw 'Score invalid'
       if (entry.eoq_acc < 0) throw 'Score too low'
       if (entry.model_name === '') {
         entry.model_name = 'Unnamed submission by ' + entry.user
       }
-      // if (entry.eoq_acc > 0 && entry.curve> 60) {
       entries.push(entry)
     } catch (err) {
       console.error(err)
@@ -93,8 +94,9 @@ var parseEntries = function (htmlStr) {
       entry.link = entry.description.substr(entry.description.lastIndexOf('http')).trim()
     }
     delete entry.description
-    entry.curve = parseFloat(cells.eq(4).text())
-    entry.eoq_acc = parseFloat(cells.eq(3).text())
+    entry.sent1_acc = parseFloat(cells.eq(3).text())
+    entry.eoq_acc = parseFloat(cells.eq(4).text())
+    entry.curve = parseFloat(cells.eq(5).text())
     entry.date = cells.eq(2).text().trim()
     entries.push(entry)
   })
