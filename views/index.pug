@@ -4,8 +4,7 @@ block title
   title Question Answering is Not a Trivial Activity 
 
 block description
-  meta(name='description', content='TODO Question Answering is Not a Trivial Activity (QANTA) is a ...')
-
+  meta(name='description', content='Question Answering is Not a Trivial Activity') 
 block extralinks
   link(rel='stylesheet', href='/stylesheets/index.css')
   script(async defer src="https://buttons.github.io/buttons.js")
@@ -60,21 +59,33 @@ block content
               .infoHeadline
                 h2 What is QANTA?
               p 
-                span
-                TODO QANTA is a question answering dataset...
+              | QANTA (
+              b Q
+              |uestion 
+              b A
+              |answering is 
+              b N
+              |ot a 
+              b T
+              |rivial 
+              b A
+              |ctivity) is a question answering dataset composed of questions from Quizbowl - a trivia game that is challenging for both humans and machines. Each question contains 4-5 pyramidally arranged clues: obscure ones at the beginning and obvious ones at the end.  Players of Quizbowl (humans and machines) compete to prove their superior mastery of knowledge by trying to answer using the least amount of information possible. 
               hr
               p
                 span.label.label-default New
-                b Dec.15th Event 
-                | TODO is happening
+                b  On Dec.15th 
+                | University of Maryland will host a series of competitions including human vs. human, machine vs. human, and machine vs. machine. For more information please see 
+                a(href="https://sites.google.com/view/qanta/dec-15-2018") qanta.org.
               .infoHeadline
                 h2 Getting Started
-              p TODO
+              p 
+                | To help you get started and demonstrate our API requirements, we provide a baseline system that can be trained and evaluated with the official evaluation script in the docker container that
+                we provide.
                 ul.list-unstyled
                   li
                     a.btn.actionBtn.inverseBtn(href="https://github.com/Pinafore/qanta-codalab")
                       | Baseline system
-                  li
+                | Submissions are done through CodaLab and the models will be tested with the same evaluation script.
                 ul.list-unstyled
                   li
                     a.btn.actionBtn.inverseBtn(href="http://codalab.qanta.org")
@@ -90,5 +101,5 @@ block content
               .infoHeadline
                 h2 Leaderboard
               p
-              | TODO We evaluate each system with three metrics: accuracy at the end of the first sentence (sent1_acc), end-of-question accuracy (eoq_acc), and an average accuracy weighted by buzzing position that we call curve score (curve). 
+              | We evaluate each system with two accuracy metrics: at the end of the first sentence (sent1_acc), and at the end of the question (eoq_acc). We also use a third metric to take buzzing position into consideration (curve). 
               +squad_2_model_display(test2, true)
