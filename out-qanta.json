@@ -118,7 +118,7 @@
             },
             "submission": {
                 "created": 1539822802,
-                "description": "",
+                "description": "Baseline (single) (University of Maryland) https://github.com/Pinafore/qanta-codalab",
                 "num_period_submissions": 1,
                 "num_total_submissions": 1,
                 "public": true,
