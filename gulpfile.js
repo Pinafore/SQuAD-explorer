@@ -17,7 +17,7 @@ var build_dir = 'qanta-leaderboard/' // good to have this be the same as the rep
 
 var rankEntries = function (entries) {
   entries.sort(function (a, b) {
-    var curveDiff = Math.sign(b.curve - a.curve)
+    var curveDiff = Math.sign(b.ew - a.ew)
     return curveDiff
   })
 
@@ -28,7 +28,7 @@ var rankEntries = function (entries) {
     } else {
       var prevEntry = entries[i - 1]
       var rank = prevEntry.rank
-      if (entry.curve < prevEntry.curve) rank++
+      if (entry.ew < prevEntry.ew) rank++
       entry.rank = rank
     }
   }
@@ -58,13 +58,14 @@ var parseCompEntries = function (comp_file) {
         entry.link = description.substr(description.lastIndexOf('http')).trim()
       }
       entry.date = o_entry.submission.created
-      entry.sent1_acc = parseFloat(o_entry.scores.sent1_acc)
-      entry.eoq_acc = parseFloat(o_entry.scores.eoq_acc)
-      entry.curve = parseFloat(o_entry.scores.curve)
-      if (!(entry.sent1_acc >= 0)) throw 'Score invalid'
-      if (entry.sent1_acc < 0) throw 'Score too low'
-      if (!(entry.eoq_acc >= 0)) throw 'Score invalid'
-      if (entry.eoq_acc < 0) throw 'Score too low'
+      entry.first_acc = parseFloat(o_entry.scores.first_acc)
+      entry.end_acc = parseFloat(o_entry.scores.end_acc)
+      entry.ew = parseFloat(o_entry.scores.ew)
+      entry.ew_opt = parseFloat(o_entry.scores.ew_opt)
+      if (!(entry.first_acc >= 0)) throw 'Score invalid'
+      if (entry.first_acc < 0) throw 'Score too low'
+      if (!(entry.end_acc >= 0)) throw 'Score invalid'
+      if (entry.end_acc < 0) throw 'Score too low'
       if (entry.model_name === '') {
         entry.model_name = 'Unnamed submission by ' + entry.user
       }
@@ -94,10 +95,11 @@ var parseEntries = function (htmlStr) {
       entry.link = entry.description.substr(entry.description.lastIndexOf('http')).trim()
     }
     delete entry.description
-    entry.sent1_acc = parseFloat(cells.eq(3).text())
-    entry.eoq_acc = parseFloat(cells.eq(4).text())
-    entry.curve = parseFloat(cells.eq(5).text())
     entry.date = cells.eq(2).text().trim()
+    entry.first_acc = parseFloat(cells.eq(3).text())
+    entry.end_acc = parseFloat(cells.eq(4).text())
+    entry.ew = parseFloat(cells.eq(5).text())
+    entry.ew_opt = parseFloat(cells.eq(6).text())
     entries.push(entry)
   })
   entries = rankEntries(entries)

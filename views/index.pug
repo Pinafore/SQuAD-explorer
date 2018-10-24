@@ -19,10 +19,12 @@ mixin squad_2_model_display(group, is_test)
       th Model
       th first_acc
       th end_acc
-      th expected wins
-    - var largest_sent1_acc = Math.max.apply(null, group.map(function (model) { return model.sent1_acc; }))
-    - var largest_eoq_acc = Math.max.apply(null, group.map(function (model) { return model.eoq_acc; }))
-    - var largest_curve = Math.max.apply(null, group.map(function (model) { return model.curve; }))
+      th EW
+      th EW_OPT
+    - var largest_first_acc = Math.max.apply(null, group.map(function (model) { return model.first_acc; }))
+    - var largest_end_acc = Math.max.apply(null, group.map(function (model) { return model.end_acc; }))
+    - var largest_ew = Math.max.apply(null, group.map(function (model) { return model.ew; }))
+    - var largest_ew_opt = Math.max.apply(null, group.map(function (model) { return model.ew_opt; }))
     each model in group
       tr
         if is_test
@@ -35,20 +37,25 @@ mixin squad_2_model_display(group, is_test)
           if model.link
             a.link(href=model.link) #{model.link}
         td
-          if model.sent1_acc == largest_sent1_acc
-            b #{model.sent1_acc.toPrecision(5)}
+          if model.first_acc == largest_first_acc
+            b #{model.first_acc.toPrecision(3)}
           else
-            | #{model.sent1_acc.toPrecision(5)}
+            | #{model.first_acc.toPrecision(3)}
         td
-          if model.eoq_acc == largest_eoq_acc
-            b #{model.eoq_acc.toPrecision(5)}
+          if model.end_acc == largest_end_acc
+            b #{model.end_acc.toPrecision(3)}
           else
-            | #{model.eoq_acc.toPrecision(5)}
+            | #{model.end_acc.toPrecision(3)}
         td
-          if model.curve == largest_curve
-            b #{model.curve.toPrecision(5)}
+          if model.ew == largest_ew
+            b #{model.ew.toPrecision(3)}
           else
-            | #{model.curve.toPrecision(5)}
+            | #{model.ew.toPrecision(3)}
+        td
+          if model.ew_opt == largest_ew_opt
+            b #{model.ew_opt.toPrecision(3)}
+          else
+            | #{model.ew_opt.toPrecision(3)}
 block content
   .cover#contentCover
     .container
@@ -128,6 +135,7 @@ block content
               .infoHeadline
                 h2 Leaderboard
               p
-              | We evaluate each system with three metrics: accuracy at the end of the first sentence (first_acc) and at the end of the question (end_acc), and the 
-              a(href="https://worksheets.codalab.org/worksheets/0xfb3d16165dd24f69bb1ba9420fca9212/") expected wins.
+              | We evaluate each system with three metrics: accuracy at the end of the first sentence (first_acc) and at the end of the question (end_acc), and two new metrics: 
+              a(href="https://worksheets.codalab.org/worksheets/0xfb3d16165dd24f69bb1ba9420fca9212/") expected wins 
+              |  with system buzzer (EW) and with optimal buzzer (EW_OPT).
               +squad_2_model_display(test2, true)
