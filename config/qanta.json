@@ -2,7 +2,7 @@
     "max_submissions_per_period": 5,
     "max_submissions_total": 20,
     "host": "https://worksheets.codalab.org",
-    "submission_tag": "qanta-submit",
+    "submission_tag": "qanta-submit-1",
     "log_worksheet_uuid": "0x0d003ba9124b4d0388cbc8b7cf817c0a",
     "allow_multiple_models": true,
     "predict": {
