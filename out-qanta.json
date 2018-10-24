@@ -112,9 +112,9 @@
                 "uuid": "0xfa2a38a9dd68425f9c28c2bd132f9027"
             },
             "scores": {
-                "sent1_acc": 0.00,
-                "eoq_acc": 0.532,
-                "curve": 0.05
+                "sent1_acc": 0.056859,
+                "eoq_acc": 0.52346,
+                "curve": 0.00388
             },
             "submission": {
                 "created": 1539822802,
