@@ -24,7 +24,7 @@
         "log_worksheet_uuid": "0x0d003ba9124b4d0388cbc8b7cf817c0a",
         "make_predictions_public": false,
         "max_leaderboard_size": 10000,
-        "max_submissions_per_period": 1,
+        "max_submissions_per_period": 5,
         "max_submissions_total": 20,
         "metadata": {
             "name": "Qanta Competition Leaderboard"
@@ -33,8 +33,8 @@
             "depth": 10,
             "metadata": {
                 "request_docker_image": "entilzha/quizbowl",
-                "request_network": false,
-                "request_queue": "fs-mac"
+                "request_memory": "4g",
+                "request_network": false
             },
             "mimic": [
                 {
@@ -42,11 +42,15 @@
                     "old": "0x5b92b603cd814da59e99ca8f1e043d34"
                 }
             ],
-            "tag": "qanta-test-predict"
+            "tag": "qanta-submit"
         },
         "quota_period_seconds": 86400,
         "refresh_period_seconds": 60,
         "score_specs": [
+            {
+                "key": "/final_scores.json:sent1_acc",
+                "name": "sent1_acc"
+            },
             {
                 "key": "/final_scores.json:eoq_acc",
                 "name": "eoq_acc"
@@ -61,34 +65,39 @@
     "leaderboard": [
         {
             "bundle": {
-                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x00accf10711240359ddccff6d184d37b/scores.json \"python dummy_evalutae.py scores.json\" --request-memory 2g --request-cpus 1",
+                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x3da3f0fd76af43deab6898ae3ebdfbf7/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
                 "command": "python dummy_evalutae.py scores.json",
-                "data_hash": null,
+                "data_hash": "0x183c62c72e8aa78b67dd0b56964b5a5cb84bbf22",
                 "dependencies": [
                     {
                         "child_path": "dummy_evalutae.py",
-                        "child_uuid": "0xfa2a38a9dd68425f9c28c2bd132f9027",
-                        "parent_name": "dummy_evaluate.py",
+                        "child_uuid": "0xfbd0a104e93c4277998c6af8d377c3e3",
+                        "parent_name": "dummy_evaluate_old.py",
                         "parent_path": "",
                         "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
                     },
                     {
                         "child_path": "scores.json",
-                        "child_uuid": "0xfa2a38a9dd68425f9c28c2bd132f9027",
+                        "child_uuid": "0xfbd0a104e93c4277998c6af8d377c3e3",
                         "parent_name": "shifeng-awesome_baseline_eval_dev-predict",
                         "parent_path": "scores.json",
-                        "parent_uuid": "0x00accf10711240359ddccff6d184d37b"
+                        "parent_uuid": "0x3da3f0fd76af43deab6898ae3ebdfbf7"
                     }
                 ],
-                "id": "0xfa2a38a9dd68425f9c28c2bd132f9027",
+                "id": "0xfbd0a104e93c4277998c6af8d377c3e3",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1539891018,
-                    "description": "{\"submit_id\": \"0xecdeee8769af46fc94d8976bb567dba6\", \"predict_id\": \"0x00accf10711240359ddccff6d184d37b\", \"submitter_id\": \"0xbdcbc9d91d494195b073dd3ad15a53c2\"}",
+                    "created": 1540397037,
+                    "data_size": 4289,
+                    "description": "{\"submit_id\": \"0x1d25749735864ed89bb367befa258504\", \"predict_id\": \"0x3da3f0fd76af43deab6898ae3ebdfbf7\", \"submitter_id\": \"0xbdcbc9d91d494195b073dd3ad15a53c2\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1540397933,
                     "name": "shifeng-awesome_baseline_eval_dev-results",
+                    "remote": "vm-clws-prod-worker-2",
                     "request_cpus": 1,
                     "request_disk": "",
                     "request_docker_image": "",
@@ -98,9 +107,12 @@
                     "request_priority": 0,
                     "request_queue": "",
                     "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1540397914,
                     "tags": [
                         "qanta-test-eval"
-                    ]
+                    ],
+                    "time": 14.578745842
                 },
                 "owner": {
                     "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
@@ -108,17 +120,17 @@
                 },
                 "permission": 2,
                 "permission_spec": "all",
-                "state": "created",
-                "uuid": "0xfa2a38a9dd68425f9c28c2bd132f9027"
+                "state": "ready",
+                "uuid": "0xfbd0a104e93c4277998c6af8d377c3e3"
             },
             "scores": {
-                "sent1_acc": 0.056859,
-                "eoq_acc": 0.52346,
-                "curve": 0.00388
+                "curve": 0.0025263154379570945,
+                "eoq_acc": 0.4685672514619883,
+                "sent1_acc": 0.0533625730994152
             },
             "submission": {
-                "created": 1539822802,
-                "description": "Baseline (single) (University of Maryland) https://github.com/Pinafore/qanta-codalab",
+                "created": 1540396849,
+                "description": "Baseline () (University of Maryland) https://github.com/Pinafore/qanta-codalab",
                 "num_period_submissions": 1,
                 "num_total_submissions": 1,
                 "public": true,
@@ -126,5 +138,5 @@
             }
         }
     ],
-    "updated": 1539891263.327115
+    "updated": 1540398043.455612
 }
