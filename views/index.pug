@@ -17,9 +17,9 @@ mixin squad_2_model_display(group, is_test)
       if is_test
         th Rank
       th Model
-      th sent1_acc
-      th eoq_acc
-      th curve
+      th first_acc
+      th end_acc
+      th expected wins
     - var largest_sent1_acc = Math.max.apply(null, group.map(function (model) { return model.sent1_acc; }))
     - var largest_eoq_acc = Math.max.apply(null, group.map(function (model) { return model.eoq_acc; }))
     - var largest_curve = Math.max.apply(null, group.map(function (model) { return model.curve; }))
@@ -127,5 +127,6 @@ block content
               .infoHeadline
                 h2 Leaderboard
               p
-              | We evaluate each system with two accuracy metrics: at the end of the first sentence (sent1_acc), and at the end of the question (eoq_acc). We also use a third metric to take buzzing position into consideration (curve). 
+              | We evaluate each system with three metrics: accuracy at the end of the first sentence (first_acc) and at the end of the question (end_acc), and the
+              a(href="https://worksheets.codalab.org/worksheets/0xfb3d16165dd24f69bb1ba9420fca9212/") expected wins.
               +squad_2_model_display(test2, true)
