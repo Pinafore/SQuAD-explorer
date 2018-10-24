@@ -37,16 +37,20 @@
     },
     "score_specs": [
         {
-            "name": "sent1_acc",
-            "key": "/final_scores.json:sent1_acc"
+            "name": "first_acc",
+            "key": "/final_scores.json:first_acc"
         },
         {
-            "name": "eoq_acc",
-            "key": "/final_scores.json:eoq_acc"
+            "name": "end_acc",
+            "key": "/final_scores.json:end_acc"
         },
         {
-            "name": "curve",
-            "key": "/final_scores.json:curve"
+            "name": "ew",
+            "key": "/final_scores.json:expected_wins"
+        },
+        {
+            "name": "ew_opt",
+            "key": "/final_scores.json:expected_wins_optimal"
         }
     ],
     "metadata": {
