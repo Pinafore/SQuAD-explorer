@@ -141,7 +141,82 @@
                 "public": true,
                 "user_name": "shifeng"
             }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0xdbbffedd7f8d4eb8a6b646b9afd1c210/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py scores.json",
+                "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0x16ddfbb8dc3746a1942c167f5b97a6e8",
+                        "parent_name": "dummy_evaluate_old.py",
+                        "parent_path": "",
+                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0x16ddfbb8dc3746a1942c167f5b97a6e8",
+                        "parent_name": "nadee-baseline_test_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0xdbbffedd7f8d4eb8a6b646b9afd1c210"
+                    }
+                ],
+                "id": "0x16ddfbb8dc3746a1942c167f5b97a6e8",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1540493190,
+                    "data_size": 4395,
+                    "description": "{\"submit_id\": \"0xdf776fab308b483ba4f0101e6a8c0f5d\", \"predict_id\": \"0xdbbffedd7f8d4eb8a6b646b9afd1c210\", \"submitter_id\": \"0xf9f4edb2bd864bbf93e0904d2c19dd53\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1540493811,
+                    "name": "nadee-baseline_test_eval_dev-results",
+                    "remote": "vm-clws-prod-worker-2",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1540493793,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 14.646515131
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x16ddfbb8dc3746a1942c167f5b97a6e8"
+            },
+            "scores": {
+                "end_acc": 0.4685672514619883,
+                "ew": 0.0025263154379570945,
+                "ew_opt": 0.5131763401549614,
+                "first_acc": 0.0533625730994152
+            },
+            "submission": {
+                "created": 1540425996,
+                "description": "Baseline Test (University of Maryland) 24th Oct",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "nadee"
+            }
         }
     ],
-    "updated": 1540413881.051448
+    "updated": 1540494990.210218
 }
