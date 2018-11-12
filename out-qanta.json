@@ -32,8 +32,7 @@
         "predict": {
             "depth": 10,
             "metadata": {
-                "request_docker_image": "entilzha/quizbowl",
-                "request_memory": "4g",
+                "allow_failed_dependencies": true,
                 "request_network": false
             },
             "mimic": [
@@ -67,6 +66,81 @@
         "submission_tag": "qanta-submit"
     },
     "leaderboard": [
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0xb05db11e87ab43d2a87b98c720c41a4e/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py scores.json",
+                "data_hash": "0x1ea8cfd1863fa07f40ed3e23c4cfda46d5acb630",
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0x9af27c97faad4b33a54e9f631b94d980",
+                        "parent_name": "dummy_evaluate_old.py",
+                        "parent_path": "",
+                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0x9af27c97faad4b33a54e9f631b94d980",
+                        "parent_name": "entilzha-dan_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0xb05db11e87ab43d2a87b98c720c41a4e"
+                    }
+                ],
+                "id": "0x9af27c97faad4b33a54e9f631b94d980",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1541994511,
+                    "data_size": 4397,
+                    "description": "{\"submit_id\": \"0x6717c2c4f96f4c3ca9776a0d0782421f\", \"predict_id\": \"0xb05db11e87ab43d2a87b98c720c41a4e\", \"submitter_id\": \"0x2cd5c751ab404af196b8165c1a9d0046\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1541994769,
+                    "name": "entilzha-dan_eval_dev-results",
+                    "remote": "vm-clws-prod-worker-2",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1541994749,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 14.6927568913
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x9af27c97faad4b33a54e9f631b94d980"
+            },
+            "scores": {
+                "end_acc": 0.43226120857699807,
+                "ew": 0.020719115292099393,
+                "ew_opt": 0.5293440622907575,
+                "first_acc": 0.07358674463937621
+            },
+            "submission": {
+                "created": 1541992150,
+                "description": "DAN Baseline (University of Maryland)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "entilzha"
+            }
+        },
         {
             "bundle": {
                 "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x0fab0c406d104ba7a9ae2e36c4fa5bb6/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
@@ -136,7 +210,7 @@
             "submission": {
                 "created": 1540412949,
                 "description": "Baseline (University of Maryland) https://github.com/Pinafore/qanta-codalab",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "shifeng"
@@ -144,39 +218,39 @@
         },
         {
             "bundle": {
-                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0xdbbffedd7f8d4eb8a6b646b9afd1c210/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x65cc848afd7f44a1ac841018cd66ee6b/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
                 "command": "python dummy_evalutae.py scores.json",
                 "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
                 "dependencies": [
                     {
                         "child_path": "dummy_evalutae.py",
-                        "child_uuid": "0x16ddfbb8dc3746a1942c167f5b97a6e8",
+                        "child_uuid": "0xb797da95835b4049886c8c903ef98d17",
                         "parent_name": "dummy_evaluate_old.py",
                         "parent_path": "",
                         "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
                     },
                     {
                         "child_path": "scores.json",
-                        "child_uuid": "0x16ddfbb8dc3746a1942c167f5b97a6e8",
-                        "parent_name": "nadee-baseline_test_eval_dev-predict",
+                        "child_uuid": "0xb797da95835b4049886c8c903ef98d17",
+                        "parent_name": "QaQaLand-awesome_baseline_eval_dev-predict",
                         "parent_path": "scores.json",
-                        "parent_uuid": "0xdbbffedd7f8d4eb8a6b646b9afd1c210"
+                        "parent_uuid": "0x65cc848afd7f44a1ac841018cd66ee6b"
                     }
                 ],
-                "id": "0x16ddfbb8dc3746a1942c167f5b97a6e8",
+                "id": "0xb797da95835b4049886c8c903ef98d17",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1540493190,
+                    "created": 1541691136,
                     "data_size": 4395,
-                    "description": "{\"submit_id\": \"0xdf776fab308b483ba4f0101e6a8c0f5d\", \"predict_id\": \"0xdbbffedd7f8d4eb8a6b646b9afd1c210\", \"submitter_id\": \"0xf9f4edb2bd864bbf93e0904d2c19dd53\"}",
+                    "description": "{\"submit_id\": \"0x6aaa3cab33794244890e4d210d8c70eb\", \"predict_id\": \"0x65cc848afd7f44a1ac841018cd66ee6b\", \"submitter_id\": \"0x4a6f68f485734c1891743a40daec924d\"}",
                     "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
                     "exitcode": 0,
-                    "last_updated": 1540493811,
-                    "name": "nadee-baseline_test_eval_dev-results",
-                    "remote": "vm-clws-prod-worker-2",
+                    "last_updated": 1541691752,
+                    "name": "QaQaLand-awesome_baseline_eval_dev-results",
+                    "remote": "vm-clws-prod-gpuworker-5",
                     "request_cpus": 1,
                     "request_disk": "",
                     "request_docker_image": "",
@@ -187,11 +261,11 @@
                     "request_queue": "",
                     "request_time": "",
                     "run_status": "Finished",
-                    "started": 1540493793,
+                    "started": 1541691733,
                     "tags": [
                         "qanta-test-eval"
                     ],
-                    "time": 14.646515131
+                    "time": 14.6223011017
                 },
                 "owner": {
                     "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
@@ -200,7 +274,7 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "ready",
-                "uuid": "0x16ddfbb8dc3746a1942c167f5b97a6e8"
+                "uuid": "0xb797da95835b4049886c8c903ef98d17"
             },
             "scores": {
                 "end_acc": 0.4685672514619883,
@@ -209,14 +283,89 @@
                 "first_acc": 0.0533625730994152
             },
             "submission": {
-                "created": 1540425996,
-                "description": "Baseline Test (University of Maryland) 24th Oct",
-                "num_period_submissions": 1,
+                "created": 1541630757,
+                "description": "TFIDF Baseline (CMSC723 QAQA-Land)",
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
-                "user_name": "nadee"
+                "user_name": "QaQaLand"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x23e32b9af50144fe8005edc31ce0d598/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py scores.json",
+                "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xfce605b42c4843b08a836f85134fdc22",
+                        "parent_name": "dummy_evaluate_old.py",
+                        "parent_path": "",
+                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xfce605b42c4843b08a836f85134fdc22",
+                        "parent_name": "roja-awesome_baseline_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x23e32b9af50144fe8005edc31ce0d598"
+                    }
+                ],
+                "id": "0xfce605b42c4843b08a836f85134fdc22",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1541876819,
+                    "data_size": 4395,
+                    "description": "{\"submit_id\": \"0x44360a7abca84d2a9a6abee7829d6387\", \"predict_id\": \"0x23e32b9af50144fe8005edc31ce0d598\", \"submitter_id\": \"0x2306f967d9b544be9b3fde3212e236ad\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1541877893,
+                    "name": "roja-awesome_baseline_eval_dev-results",
+                    "remote": "vm-clws-prod-worker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1541877874,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 14.6651391983
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xfce605b42c4843b08a836f85134fdc22"
+            },
+            "scores": {
+                "end_acc": 0.4685672514619883,
+                "ew": 0.0025263154379570945,
+                "ew_opt": 0.5131763401549614,
+                "first_acc": 0.0533625730994152
+            },
+            "submission": {
+                "created": 1541824854,
+                "description": "Baseline submission (CMSC723 Team ROJA)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "roja"
             }
         }
     ],
-    "updated": 1540494990.210218
+    "updated": 1541994865.598582
 }
