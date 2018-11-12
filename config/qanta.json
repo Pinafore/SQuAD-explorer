@@ -16,8 +16,7 @@
         "tag": "qanta-submit",
         "metadata": {
           "request_network": false,
-          "request_docker_image": "entilzha/quizbowl",
-          "request_memory": "4g"
+          "allow_failed_dependencies": true
         }
     },
     "evaluate": {
