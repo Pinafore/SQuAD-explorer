@@ -68,6 +68,81 @@
     "leaderboard": [
         {
             "bundle": {
+                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x2892f74af24846b89e4eefe3fc3bf7ba/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py scores.json",
+                "data_hash": "0x333a88c04ef4a4a0e39fd0b825c85c85238124d4",
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xb6f9d801165b4100aa2daa1c45a981f9",
+                        "parent_name": "dummy_evaluate_old.py",
+                        "parent_path": "",
+                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xb6f9d801165b4100aa2daa1c45a981f9",
+                        "parent_name": "entilzha-dan-wiki-eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x2892f74af24846b89e4eefe3fc3bf7ba"
+                    }
+                ],
+                "id": "0xb6f9d801165b4100aa2daa1c45a981f9",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1542220468,
+                    "data_size": 4393,
+                    "description": "{\"submit_id\": \"0xb918e677eef54b199755745b9a984dc1\", \"predict_id\": \"0x2892f74af24846b89e4eefe3fc3bf7ba\", \"submitter_id\": \"0x2cd5c751ab404af196b8165c1a9d0046\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1542220815,
+                    "name": "entilzha-dan-wiki-eval_dev-results",
+                    "remote": "vm-clws-prod-worker-0",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1542220795,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 14.726692915
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xb6f9d801165b4100aa2daa1c45a981f9"
+            },
+            "scores": {
+                "end_acc": 0.5596978557504874,
+                "ew": 0.04868007117372724,
+                "ew_opt": 0.5823218358223674,
+                "first_acc": 0.09234892787524367
+            },
+            "submission": {
+                "created": 1542219538,
+                "description": "DAN Wiki (University of Maryland)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 2,
+                "public": true,
+                "user_name": "entilzha"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0xb05db11e87ab43d2a87b98c720c41a4e/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
                 "command": "python dummy_evalutae.py scores.json",
@@ -136,84 +211,9 @@
                 "created": 1541992150,
                 "description": "DAN Baseline (University of Maryland)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 1,
+                "num_total_submissions": 2,
                 "public": true,
                 "user_name": "entilzha"
-            }
-        },
-        {
-            "bundle": {
-                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x0fab0c406d104ba7a9ae2e36c4fa5bb6/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
-                "bundle_type": "run",
-                "command": "python dummy_evalutae.py scores.json",
-                "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
-                "dependencies": [
-                    {
-                        "child_path": "dummy_evalutae.py",
-                        "child_uuid": "0x87cab18971ae4c7f9aaa97efbf57137a",
-                        "parent_name": "dummy_evaluate_old.py",
-                        "parent_path": "",
-                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
-                    },
-                    {
-                        "child_path": "scores.json",
-                        "child_uuid": "0x87cab18971ae4c7f9aaa97efbf57137a",
-                        "parent_name": "shifeng-awesome_baseline_eval_dev-predict",
-                        "parent_path": "scores.json",
-                        "parent_uuid": "0x0fab0c406d104ba7a9ae2e36c4fa5bb6"
-                    }
-                ],
-                "id": "0x87cab18971ae4c7f9aaa97efbf57137a",
-                "is_anonymous": false,
-                "metadata": {
-                    "actions": [],
-                    "allow_failed_dependencies": false,
-                    "created": 1540413000,
-                    "data_size": 4395,
-                    "description": "{\"submit_id\": \"0xebfa966e224445be898de5229972a9ee\", \"predict_id\": \"0x0fab0c406d104ba7a9ae2e36c4fa5bb6\", \"submitter_id\": \"0xbdcbc9d91d494195b073dd3ad15a53c2\"}",
-                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
-                    "exitcode": 0,
-                    "last_updated": 1540413761,
-                    "name": "shifeng-awesome_baseline_eval_dev-results",
-                    "remote": "vm-clws-prod-worker-2",
-                    "request_cpus": 1,
-                    "request_disk": "",
-                    "request_docker_image": "",
-                    "request_gpus": 0,
-                    "request_memory": "2g",
-                    "request_network": false,
-                    "request_priority": 0,
-                    "request_queue": "",
-                    "request_time": "",
-                    "run_status": "Finished",
-                    "started": 1540413753,
-                    "tags": [
-                        "qanta-test-eval"
-                    ],
-                    "time": 4.31463694572
-                },
-                "owner": {
-                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
-                    "type": "users"
-                },
-                "permission": 2,
-                "permission_spec": "all",
-                "state": "ready",
-                "uuid": "0x87cab18971ae4c7f9aaa97efbf57137a"
-            },
-            "scores": {
-                "end_acc": 0.4685672514619883,
-                "ew": 0.0025263154379570945,
-                "ew_opt": 0.5131763401549614,
-                "first_acc": 0.0533625730994152
-            },
-            "submission": {
-                "created": 1540412949,
-                "description": "Baseline (University of Maryland) https://github.com/Pinafore/qanta-codalab",
-                "num_period_submissions": 0,
-                "num_total_submissions": 1,
-                "public": true,
-                "user_name": "shifeng"
             }
         },
         {
@@ -293,6 +293,81 @@
         },
         {
             "bundle": {
+                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x0fab0c406d104ba7a9ae2e36c4fa5bb6/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py scores.json",
+                "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0x87cab18971ae4c7f9aaa97efbf57137a",
+                        "parent_name": "dummy_evaluate_old.py",
+                        "parent_path": "",
+                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0x87cab18971ae4c7f9aaa97efbf57137a",
+                        "parent_name": "shifeng-awesome_baseline_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x0fab0c406d104ba7a9ae2e36c4fa5bb6"
+                    }
+                ],
+                "id": "0x87cab18971ae4c7f9aaa97efbf57137a",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1540413000,
+                    "data_size": 4395,
+                    "description": "{\"submit_id\": \"0xebfa966e224445be898de5229972a9ee\", \"predict_id\": \"0x0fab0c406d104ba7a9ae2e36c4fa5bb6\", \"submitter_id\": \"0xbdcbc9d91d494195b073dd3ad15a53c2\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1540413761,
+                    "name": "shifeng-awesome_baseline_eval_dev-results",
+                    "remote": "vm-clws-prod-worker-2",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1540413753,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 4.31463694572
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x87cab18971ae4c7f9aaa97efbf57137a"
+            },
+            "scores": {
+                "end_acc": 0.4685672514619883,
+                "ew": 0.0025263154379570945,
+                "ew_opt": 0.5131763401549614,
+                "first_acc": 0.0533625730994152
+            },
+            "submission": {
+                "created": 1540412949,
+                "description": "Baseline (University of Maryland) https://github.com/Pinafore/qanta-codalab",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "shifeng"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x23e32b9af50144fe8005edc31ce0d598/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
                 "command": "python dummy_evalutae.py scores.json",
@@ -365,7 +440,82 @@
                 "public": true,
                 "user_name": "roja"
             }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x3bb6fb6a855e4323897f741d89107aac/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py scores.json",
+                "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xaf477aa1e6534f3f97201065ae0727c0",
+                        "parent_name": "dummy_evaluate_old.py",
+                        "parent_path": "",
+                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xaf477aa1e6534f3f97201065ae0727c0",
+                        "parent_name": "kevchn-awesome_baseline_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x3bb6fb6a855e4323897f741d89107aac"
+                    }
+                ],
+                "id": "0xaf477aa1e6534f3f97201065ae0727c0",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1542140049,
+                    "data_size": 4395,
+                    "description": "{\"submit_id\": \"0xfa4f6b2682d440ac9f3b674a6ff1712b\", \"predict_id\": \"0x3bb6fb6a855e4323897f741d89107aac\", \"submitter_id\": \"0xfa5aa773edfc46b0891d50a4e6723651\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1542140776,
+                    "name": "kevchn-awesome_baseline_eval_dev-results",
+                    "remote": "vm-clws-prod-worker-0",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1542140757,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 14.6695020199
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xaf477aa1e6534f3f97201065ae0727c0"
+            },
+            "scores": {
+                "end_acc": null,
+                "ew": null,
+                "ew_opt": null,
+                "first_acc": null
+            },
+            "submission": {
+                "created": 1542063541,
+                "description": "Baseline (CMSC723 We QANTA Do This)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "kevchn"
+            }
         }
     ],
-    "updated": 1541994865.598582
+    "updated": 1542229338.021861
 }
