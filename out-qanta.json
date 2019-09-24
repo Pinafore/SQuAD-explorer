@@ -4,12 +4,12 @@
         "allow_orphans": true,
         "count_failed_submissions": true,
         "evaluate": {
-            "command": "python dummy_evalutae.py scores.json",
+            "command": "python dummy_evalutae.py",
             "dependencies": [
                 {
                     "child_path": "dummy_evalutae.py",
                     "parent_path": "",
-                    "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                    "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
                 },
                 {
                     "child_path": "scores.json",
@@ -21,7 +21,7 @@
             "tag": "qanta-test-eval"
         },
         "host": "https://worksheets.codalab.org",
-        "log_worksheet_uuid": "0x0d003ba9124b4d0388cbc8b7cf817c0a",
+        "log_worksheet_uuid": "0xbb0acb9df0cb45b4a8dfcfdcda264ebe",
         "make_predictions_public": false,
         "max_leaderboard_size": 10000,
         "max_submissions_per_period": 5,
@@ -33,7 +33,8 @@
             "depth": 10,
             "metadata": {
                 "allow_failed_dependencies": true,
-                "request_network": false
+                "request_network": false,
+                "request_queue": "tag=bBkfmdngCJZUrLvophmLhZZKq"
             },
             "mimic": [
                 {
@@ -68,39 +69,39 @@
     "leaderboard": [
         {
             "bundle": {
-                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x2892f74af24846b89e4eefe3fc3bf7ba/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x18964e63251b4ba29cef95da4b065882/scores.json \"python dummy_evalutae.py\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
-                "command": "python dummy_evalutae.py scores.json",
-                "data_hash": "0x333a88c04ef4a4a0e39fd0b825c85c85238124d4",
+                "command": "python dummy_evalutae.py",
+                "data_hash": "0x0806409166b209c688d98e1795f884aab9c4dedb",
                 "dependencies": [
                     {
                         "child_path": "dummy_evalutae.py",
-                        "child_uuid": "0xb6f9d801165b4100aa2daa1c45a981f9",
-                        "parent_name": "dummy_evaluate_old.py",
+                        "child_uuid": "0x6741d5d3ceae466580615d0bd8149c04",
+                        "parent_name": "dummy_evaluate.py",
                         "parent_path": "",
-                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
                     },
                     {
                         "child_path": "scores.json",
-                        "child_uuid": "0xb6f9d801165b4100aa2daa1c45a981f9",
-                        "parent_name": "entilzha-dan-wiki-eval_dev-predict",
+                        "child_uuid": "0x6741d5d3ceae466580615d0bd8149c04",
+                        "parent_name": "entilzha-elmo_dan_eval_dev-predict",
                         "parent_path": "scores.json",
-                        "parent_uuid": "0x2892f74af24846b89e4eefe3fc3bf7ba"
+                        "parent_uuid": "0x18964e63251b4ba29cef95da4b065882"
                     }
                 ],
-                "id": "0xb6f9d801165b4100aa2daa1c45a981f9",
+                "id": "0x6741d5d3ceae466580615d0bd8149c04",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1542220468,
-                    "data_size": 4393,
-                    "description": "{\"submit_id\": \"0xb918e677eef54b199755745b9a984dc1\", \"predict_id\": \"0x2892f74af24846b89e4eefe3fc3bf7ba\", \"submitter_id\": \"0x2cd5c751ab404af196b8165c1a9d0046\"}",
+                    "created": 1544137898,
+                    "data_size": 4395,
+                    "description": "{\"submit_id\": \"0x02109d490718415cab5fb16857903eab\", \"predict_id\": \"0x18964e63251b4ba29cef95da4b065882\", \"submitter_id\": \"0x2cd5c751ab404af196b8165c1a9d0046\"}",
                     "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
                     "exitcode": 0,
-                    "last_updated": 1542220815,
-                    "name": "entilzha-dan-wiki-eval_dev-results",
-                    "remote": "vm-clws-prod-worker-0",
+                    "last_updated": 1544140035,
+                    "name": "entilzha-elmo_dan_eval_dev-results",
+                    "remote": "ip-172-31-47-16",
                     "request_cpus": 1,
                     "request_disk": "",
                     "request_docker_image": "",
@@ -111,11 +112,11 @@
                     "request_queue": "",
                     "request_time": "",
                     "run_status": "Finished",
-                    "started": 1542220795,
+                    "started": 1544140012,
                     "tags": [
                         "qanta-test-eval"
                     ],
-                    "time": 14.726692915
+                    "time": 16.8000071049
                 },
                 "owner": {
                     "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
@@ -124,7 +125,82 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "ready",
-                "uuid": "0xb6f9d801165b4100aa2daa1c45a981f9"
+                "uuid": "0x6741d5d3ceae466580615d0bd8149c04"
+            },
+            "scores": {
+                "end_acc": 0.5080409356725146,
+                "ew": 0.04530163655963765,
+                "ew_opt": 0.5669965236778499,
+                "first_acc": 0.1023391812865497
+            },
+            "submission": {
+                "created": 1542820557,
+                "description": "Elmo DAN (University of Maryland)",
+                "num_period_submissions": 3,
+                "num_total_submissions": 3,
+                "public": true,
+                "user_name": "entilzha"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x194077e9efc140e5af10220259f2aa52/scores.json \"python dummy_evalutae.py\" --request-cpus 1 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": "0xc249983cba9742e2c92e1ab96fafd90364605924",
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0x84e7f6e2ecb04ac3985ef28f212c0d2b",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0x84e7f6e2ecb04ac3985ef28f212c0d2b",
+                        "parent_name": "entilzha-dan-wiki-eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x194077e9efc140e5af10220259f2aa52"
+                    }
+                ],
+                "id": "0x84e7f6e2ecb04ac3985ef28f212c0d2b",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544134781,
+                    "data_size": 4397,
+                    "description": "{\"submit_id\": \"0xb918e677eef54b199755745b9a984dc1\", \"predict_id\": \"0x194077e9efc140e5af10220259f2aa52\", \"submitter_id\": \"0x2cd5c751ab404af196b8165c1a9d0046\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1544137946,
+                    "name": "entilzha-dan-wiki-eval_dev-results",
+                    "remote": "vm-clws-prod-gpuworker-4",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1544137823,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 27.8317131996
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x84e7f6e2ecb04ac3985ef28f212c0d2b"
             },
             "scores": {
                 "end_acc": 0.5596978557504874,
@@ -135,47 +211,47 @@
             "submission": {
                 "created": 1542219538,
                 "description": "DAN Wiki (University of Maryland)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 2,
+                "num_period_submissions": 3,
+                "num_total_submissions": 3,
                 "public": true,
                 "user_name": "entilzha"
             }
         },
         {
             "bundle": {
-                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0xb05db11e87ab43d2a87b98c720c41a4e/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x50a2a61f0da645b9aa541c75aeb381dc/scores.json \"python dummy_evalutae.py\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
-                "command": "python dummy_evalutae.py scores.json",
-                "data_hash": "0x1ea8cfd1863fa07f40ed3e23c4cfda46d5acb630",
+                "command": "python dummy_evalutae.py",
+                "data_hash": "0x032d87548ddbef542f73a7cab001ea7bc06d1882",
                 "dependencies": [
                     {
                         "child_path": "dummy_evalutae.py",
-                        "child_uuid": "0x9af27c97faad4b33a54e9f631b94d980",
-                        "parent_name": "dummy_evaluate_old.py",
+                        "child_uuid": "0xd67bc095177e4acda0ed0614d215acfc",
+                        "parent_name": "dummy_evaluate.py",
                         "parent_path": "",
-                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
                     },
                     {
                         "child_path": "scores.json",
-                        "child_uuid": "0x9af27c97faad4b33a54e9f631b94d980",
+                        "child_uuid": "0xd67bc095177e4acda0ed0614d215acfc",
                         "parent_name": "entilzha-dan_eval_dev-predict",
                         "parent_path": "scores.json",
-                        "parent_uuid": "0xb05db11e87ab43d2a87b98c720c41a4e"
+                        "parent_uuid": "0x50a2a61f0da645b9aa541c75aeb381dc"
                     }
                 ],
-                "id": "0x9af27c97faad4b33a54e9f631b94d980",
+                "id": "0xd67bc095177e4acda0ed0614d215acfc",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1541994511,
-                    "data_size": 4397,
-                    "description": "{\"submit_id\": \"0x6717c2c4f96f4c3ca9776a0d0782421f\", \"predict_id\": \"0xb05db11e87ab43d2a87b98c720c41a4e\", \"submitter_id\": \"0x2cd5c751ab404af196b8165c1a9d0046\"}",
+                    "created": 1544134792,
+                    "data_size": 4401,
+                    "description": "{\"submit_id\": \"0x6717c2c4f96f4c3ca9776a0d0782421f\", \"predict_id\": \"0x50a2a61f0da645b9aa541c75aeb381dc\", \"submitter_id\": \"0x2cd5c751ab404af196b8165c1a9d0046\"}",
                     "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
                     "exitcode": 0,
-                    "last_updated": 1541994769,
+                    "last_updated": 1544138156,
                     "name": "entilzha-dan_eval_dev-results",
-                    "remote": "vm-clws-prod-worker-2",
+                    "remote": "vm-clws-prod-gpuworker-4",
                     "request_cpus": 1,
                     "request_disk": "",
                     "request_docker_image": "",
@@ -186,11 +262,11 @@
                     "request_queue": "",
                     "request_time": "",
                     "run_status": "Finished",
-                    "started": 1541994749,
+                    "started": 1544138045,
                     "tags": [
                         "qanta-test-eval"
                     ],
-                    "time": 14.6927568913
+                    "time": 14.9298038483
                 },
                 "owner": {
                     "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
@@ -199,7 +275,7 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "ready",
-                "uuid": "0x9af27c97faad4b33a54e9f631b94d980"
+                "uuid": "0xd67bc095177e4acda0ed0614d215acfc"
             },
             "scores": {
                 "end_acc": 0.43226120857699807,
@@ -210,47 +286,47 @@
             "submission": {
                 "created": 1541992150,
                 "description": "DAN Baseline (University of Maryland)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 2,
+                "num_period_submissions": 3,
+                "num_total_submissions": 3,
                 "public": true,
                 "user_name": "entilzha"
             }
         },
         {
             "bundle": {
-                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x65cc848afd7f44a1ac841018cd66ee6b/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x52819d76ea8248448b370f1de6383efb/scores.json \"python dummy_evalutae.py\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
-                "command": "python dummy_evalutae.py scores.json",
-                "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
+                "command": "python dummy_evalutae.py",
+                "data_hash": "0x03e52135f8a25afb363025fe1469a6de70cb1966",
                 "dependencies": [
                     {
                         "child_path": "dummy_evalutae.py",
-                        "child_uuid": "0xb797da95835b4049886c8c903ef98d17",
-                        "parent_name": "dummy_evaluate_old.py",
+                        "child_uuid": "0x01475e1d1c00418e8788a7cdb4fe3111",
+                        "parent_name": "dummy_evaluate.py",
                         "parent_path": "",
-                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
                     },
                     {
                         "child_path": "scores.json",
-                        "child_uuid": "0xb797da95835b4049886c8c903ef98d17",
-                        "parent_name": "QaQaLand-awesome_baseline_eval_dev-predict",
+                        "child_uuid": "0x01475e1d1c00418e8788a7cdb4fe3111",
+                        "parent_name": "sweta20-buzzer_baseline_eval_dev-predict",
                         "parent_path": "scores.json",
-                        "parent_uuid": "0x65cc848afd7f44a1ac841018cd66ee6b"
+                        "parent_uuid": "0x52819d76ea8248448b370f1de6383efb"
                     }
                 ],
-                "id": "0xb797da95835b4049886c8c903ef98d17",
+                "id": "0x01475e1d1c00418e8788a7cdb4fe3111",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1541691136,
+                    "created": 1544128808,
                     "data_size": 4395,
-                    "description": "{\"submit_id\": \"0x6aaa3cab33794244890e4d210d8c70eb\", \"predict_id\": \"0x65cc848afd7f44a1ac841018cd66ee6b\", \"submitter_id\": \"0x4a6f68f485734c1891743a40daec924d\"}",
+                    "description": "{\"submit_id\": \"0xe03b8ab350674bb58a9253b9db28cb6c\", \"predict_id\": \"0x52819d76ea8248448b370f1de6383efb\", \"submitter_id\": \"0xdf98cbcb11d941bda457f28dc60d8396\"}",
                     "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
                     "exitcode": 0,
-                    "last_updated": 1541691752,
-                    "name": "QaQaLand-awesome_baseline_eval_dev-results",
-                    "remote": "vm-clws-prod-gpuworker-5",
+                    "last_updated": 1544131081,
+                    "name": "sweta20-buzzer_baseline_eval_dev-results",
+                    "remote": "ip-172-31-47-16",
                     "request_cpus": 1,
                     "request_disk": "",
                     "request_docker_image": "",
@@ -261,11 +337,11 @@
                     "request_queue": "",
                     "request_time": "",
                     "run_status": "Finished",
-                    "started": 1541691733,
+                    "started": 1544131059,
                     "tags": [
                         "qanta-test-eval"
                     ],
-                    "time": 14.6223011017
+                    "time": 17.022644043
                 },
                 "owner": {
                     "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
@@ -274,58 +350,58 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "ready",
-                "uuid": "0xb797da95835b4049886c8c903ef98d17"
+                "uuid": "0x01475e1d1c00418e8788a7cdb4fe3111"
             },
             "scores": {
-                "end_acc": 0.4685672514619883,
-                "ew": 0.0025263154379570945,
-                "ew_opt": 0.5131763401549614,
-                "first_acc": 0.0533625730994152
+                "end_acc": 0.4678362573099415,
+                "ew": 0.18318927843069308,
+                "ew_opt": 0.5139458957332126,
+                "first_acc": 0.0594541910331384
             },
             "submission": {
-                "created": 1541630757,
-                "description": "TFIDF Baseline (CMSC723 QAQA-Land)",
-                "num_period_submissions": 0,
-                "num_total_submissions": 1,
+                "created": 1543692060,
+                "description": "TFIDF Buzzer (CMSC723 Technical Wizards)",
+                "num_period_submissions": 3,
+                "num_total_submissions": 3,
                 "public": true,
-                "user_name": "QaQaLand"
+                "user_name": "sweta20"
             }
         },
         {
             "bundle": {
-                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x0fab0c406d104ba7a9ae2e36c4fa5bb6/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x11ccf87d6409492c9aaf192455b8c808/scores.json \"python dummy_evalutae.py\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
-                "command": "python dummy_evalutae.py scores.json",
-                "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
+                "command": "python dummy_evalutae.py",
+                "data_hash": "0xbf0636880b8f9439c39391fa6952c8fd48518e60",
                 "dependencies": [
                     {
                         "child_path": "dummy_evalutae.py",
-                        "child_uuid": "0x87cab18971ae4c7f9aaa97efbf57137a",
-                        "parent_name": "dummy_evaluate_old.py",
+                        "child_uuid": "0xd52464c80f364e729911043b269e32e7",
+                        "parent_name": "dummy_evaluate.py",
                         "parent_path": "",
-                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
                     },
                     {
                         "child_path": "scores.json",
-                        "child_uuid": "0x87cab18971ae4c7f9aaa97efbf57137a",
-                        "parent_name": "shifeng-awesome_baseline_eval_dev-predict",
+                        "child_uuid": "0xd52464c80f364e729911043b269e32e7",
+                        "parent_name": "ForwardRethinking-dan_glove300_aug_eval_dev-predict",
                         "parent_path": "scores.json",
-                        "parent_uuid": "0x0fab0c406d104ba7a9ae2e36c4fa5bb6"
+                        "parent_uuid": "0x11ccf87d6409492c9aaf192455b8c808"
                     }
                 ],
-                "id": "0x87cab18971ae4c7f9aaa97efbf57137a",
+                "id": "0xd52464c80f364e729911043b269e32e7",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1540413000,
+                    "created": 1544128832,
                     "data_size": 4395,
-                    "description": "{\"submit_id\": \"0xebfa966e224445be898de5229972a9ee\", \"predict_id\": \"0x0fab0c406d104ba7a9ae2e36c4fa5bb6\", \"submitter_id\": \"0xbdcbc9d91d494195b073dd3ad15a53c2\"}",
+                    "description": "{\"submit_id\": \"0x3de0e505b9c74bd0bc7bd93615ef6bc0\", \"predict_id\": \"0x11ccf87d6409492c9aaf192455b8c808\", \"submitter_id\": \"0x44c6bc246a8f48da8ab3d04cecac8f9e\"}",
                     "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
                     "exitcode": 0,
-                    "last_updated": 1540413761,
-                    "name": "shifeng-awesome_baseline_eval_dev-results",
-                    "remote": "vm-clws-prod-worker-2",
+                    "last_updated": 1544131712,
+                    "name": "ForwardRethinking-dan_glove300_aug_eval_dev-results",
+                    "remote": "ip-172-31-47-16",
                     "request_cpus": 1,
                     "request_disk": "",
                     "request_docker_image": "",
@@ -336,11 +412,11 @@
                     "request_queue": "",
                     "request_time": "",
                     "run_status": "Finished",
-                    "started": 1540413753,
+                    "started": 1544131696,
                     "tags": [
                         "qanta-test-eval"
                     ],
-                    "time": 4.31463694572
+                    "time": 9.27109122276
                 },
                 "owner": {
                     "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
@@ -349,58 +425,58 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "ready",
-                "uuid": "0x87cab18971ae4c7f9aaa97efbf57137a"
+                "uuid": "0xd52464c80f364e729911043b269e32e7"
             },
             "scores": {
-                "end_acc": 0.4685672514619883,
-                "ew": 0.0025263154379570945,
-                "ew_opt": 0.5131763401549614,
-                "first_acc": 0.0533625730994152
+                "end_acc": 0.503167641325536,
+                "ew": 0.11257275685590017,
+                "ew_opt": 0.5274043174647526,
+                "first_acc": 0.05579922027290448
             },
             "submission": {
-                "created": 1540412949,
-                "description": "Baseline (University of Maryland) https://github.com/Pinafore/qanta-codalab",
-                "num_period_submissions": 0,
-                "num_total_submissions": 1,
+                "created": 1543860758,
+                "description": "GLOVE_300 DAN (CMSC723 ForwardRethinking)",
+                "num_period_submissions": 2,
+                "num_total_submissions": 2,
                 "public": true,
-                "user_name": "shifeng"
+                "user_name": "ForwardRethinking"
             }
         },
         {
             "bundle": {
-                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x23e32b9af50144fe8005edc31ce0d598/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0xbb8a11d6cb1b46299620e823f01079a4/scores.json \"python dummy_evalutae.py\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
-                "command": "python dummy_evalutae.py scores.json",
-                "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
+                "command": "python dummy_evalutae.py",
+                "data_hash": "0x35e8dbb3a08a2be8473684b9345d59864d442afc",
                 "dependencies": [
                     {
                         "child_path": "dummy_evalutae.py",
-                        "child_uuid": "0xfce605b42c4843b08a836f85134fdc22",
-                        "parent_name": "dummy_evaluate_old.py",
+                        "child_uuid": "0x0faf03f0c32d4bb6a61e883ee8b1969e",
+                        "parent_name": "dummy_evaluate.py",
                         "parent_path": "",
-                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
                     },
                     {
                         "child_path": "scores.json",
-                        "child_uuid": "0xfce605b42c4843b08a836f85134fdc22",
-                        "parent_name": "roja-awesome_baseline_eval_dev-predict",
+                        "child_uuid": "0x0faf03f0c32d4bb6a61e883ee8b1969e",
+                        "parent_name": "sweta20-dan_eval_dev-predict",
                         "parent_path": "scores.json",
-                        "parent_uuid": "0x23e32b9af50144fe8005edc31ce0d598"
+                        "parent_uuid": "0xbb8a11d6cb1b46299620e823f01079a4"
                     }
                 ],
-                "id": "0xfce605b42c4843b08a836f85134fdc22",
+                "id": "0x0faf03f0c32d4bb6a61e883ee8b1969e",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1541876819,
-                    "data_size": 4395,
-                    "description": "{\"submit_id\": \"0x44360a7abca84d2a9a6abee7829d6387\", \"predict_id\": \"0x23e32b9af50144fe8005edc31ce0d598\", \"submitter_id\": \"0x2306f967d9b544be9b3fde3212e236ad\"}",
+                    "created": 1544128836,
+                    "data_size": 4397,
+                    "description": "{\"submit_id\": \"0x41d2631510fe4abc85590311882ad145\", \"predict_id\": \"0xbb8a11d6cb1b46299620e823f01079a4\", \"submitter_id\": \"0xdf98cbcb11d941bda457f28dc60d8396\"}",
                     "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
                     "exitcode": 0,
-                    "last_updated": 1541877893,
-                    "name": "roja-awesome_baseline_eval_dev-results",
-                    "remote": "vm-clws-prod-worker-1",
+                    "last_updated": 1544131835,
+                    "name": "sweta20-dan_eval_dev-results",
+                    "remote": "ip-172-31-47-16",
                     "request_cpus": 1,
                     "request_disk": "",
                     "request_docker_image": "",
@@ -411,11 +487,11 @@
                     "request_queue": "",
                     "request_time": "",
                     "run_status": "Finished",
-                    "started": 1541877874,
+                    "started": 1544131813,
                     "tags": [
                         "qanta-test-eval"
                     ],
-                    "time": 14.6651391983
+                    "time": 16.9225919247
                 },
                 "owner": {
                     "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
@@ -424,58 +500,58 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "ready",
-                "uuid": "0xfce605b42c4843b08a836f85134fdc22"
+                "uuid": "0x0faf03f0c32d4bb6a61e883ee8b1969e"
             },
             "scores": {
-                "end_acc": 0.4685672514619883,
-                "ew": 0.0025263154379570945,
-                "ew_opt": 0.5131763401549614,
-                "first_acc": 0.0533625730994152
+                "end_acc": 0.5567738791423001,
+                "ew": 0.21364458414914725,
+                "ew_opt": 0.5457343317646118,
+                "first_acc": 0.04678362573099415
             },
             "submission": {
-                "created": 1541824854,
-                "description": "Baseline submission (CMSC723 Team ROJA)",
-                "num_period_submissions": 0,
-                "num_total_submissions": 1,
+                "created": 1543859394,
+                "description": "DAN (CMSC723 Technical Wizards)",
+                "num_period_submissions": 3,
+                "num_total_submissions": 3,
                 "public": true,
-                "user_name": "roja"
+                "user_name": "sweta20"
             }
         },
         {
             "bundle": {
-                "args": "run dummy_evalutae.py:0xed96348e82b14bc1a843a1e7168e42cb scores.json:0x3bb6fb6a855e4323897f741d89107aac/scores.json \"python dummy_evalutae.py scores.json\" --request-cpus 1 --request-memory 2g",
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x90685c8b86544555a08cd4b656170c4e/scores.json \"python dummy_evalutae.py\" --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
-                "command": "python dummy_evalutae.py scores.json",
-                "data_hash": "0xdbc4b1697dd4cfc5508a22fc6df36e4d1b0cdeb7",
+                "command": "python dummy_evalutae.py",
+                "data_hash": "0x3930e2f8cfaacd03e2b68ed00a1af7ac1889b07f",
                 "dependencies": [
                     {
                         "child_path": "dummy_evalutae.py",
-                        "child_uuid": "0xaf477aa1e6534f3f97201065ae0727c0",
-                        "parent_name": "dummy_evaluate_old.py",
+                        "child_uuid": "0xd0185e2db9234280a317b76cbd09f62c",
+                        "parent_name": "dummy_evaluate.py",
                         "parent_path": "",
-                        "parent_uuid": "0xed96348e82b14bc1a843a1e7168e42cb"
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
                     },
                     {
                         "child_path": "scores.json",
-                        "child_uuid": "0xaf477aa1e6534f3f97201065ae0727c0",
-                        "parent_name": "kevchn-awesome_baseline_eval_dev-predict",
+                        "child_uuid": "0xd0185e2db9234280a317b76cbd09f62c",
+                        "parent_name": "FYY-tfidf_baseline_eval_dev-predict",
                         "parent_path": "scores.json",
-                        "parent_uuid": "0x3bb6fb6a855e4323897f741d89107aac"
+                        "parent_uuid": "0x90685c8b86544555a08cd4b656170c4e"
                     }
                 ],
-                "id": "0xaf477aa1e6534f3f97201065ae0727c0",
+                "id": "0xd0185e2db9234280a317b76cbd09f62c",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1542140049,
-                    "data_size": 4395,
-                    "description": "{\"submit_id\": \"0xfa4f6b2682d440ac9f3b674a6ff1712b\", \"predict_id\": \"0x3bb6fb6a855e4323897f741d89107aac\", \"submitter_id\": \"0xfa5aa773edfc46b0891d50a4e6723651\"}",
+                    "created": 1544134802,
+                    "data_size": 4397,
+                    "description": "{\"submit_id\": \"0x82436a34639c4d4c946d57aaf7d35ebf\", \"predict_id\": \"0x90685c8b86544555a08cd4b656170c4e\", \"submitter_id\": \"0x562354a802144b10a9ad72af66653eb3\"}",
                     "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
                     "exitcode": 0,
-                    "last_updated": 1542140776,
-                    "name": "kevchn-awesome_baseline_eval_dev-results",
-                    "remote": "vm-clws-prod-worker-0",
+                    "last_updated": 1544137626,
+                    "name": "FYY-tfidf_baseline_eval_dev-results",
+                    "remote": "vm-clws-prod-gpuworker-4",
                     "request_cpus": 1,
                     "request_disk": "",
                     "request_docker_image": "",
@@ -486,11 +562,11 @@
                     "request_queue": "",
                     "request_time": "",
                     "run_status": "Finished",
-                    "started": 1542140757,
+                    "started": 1544137514,
                     "tags": [
                         "qanta-test-eval"
                     ],
-                    "time": 14.6695020199
+                    "time": 15.0013201237
                 },
                 "owner": {
                     "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
@@ -499,23 +575,879 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "ready",
-                "uuid": "0xaf477aa1e6534f3f97201065ae0727c0"
+                "uuid": "0xd0185e2db9234280a317b76cbd09f62c"
             },
             "scores": {
-                "end_acc": null,
-                "ew": null,
-                "ew_opt": null,
-                "first_acc": null
+                "end_acc": 0.5453216374269005,
+                "ew": 0.1371542203746614,
+                "ew_opt": 0.5398228905092206,
+                "first_acc": 0.046296296296296294
             },
             "submission": {
-                "created": 1542063541,
-                "description": "Baseline (CMSC723 We QANTA Do This)",
-                "num_period_submissions": 0,
+                "created": 1542745038,
+                "description": "TF-IDF (CMSC723 FYY)",
+                "num_period_submissions": 1,
                 "num_total_submissions": 1,
                 "public": true,
-                "user_name": "kevchn"
+                "user_name": "FYY"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x5e80337f3cb34b20acd227683c54c7f1/scores.json \"python dummy_evalutae.py\" --request-cpus 1 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": "0xd68a887a640995ea3b23cc3648391172141ff35d",
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0x425794ed18c6479cab52a5c1763bd8c7",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0x425794ed18c6479cab52a5c1763bd8c7",
+                        "parent_name": "ForwardRethinking-tfidf_baseline_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x5e80337f3cb34b20acd227683c54c7f1"
+                    }
+                ],
+                "id": "0x425794ed18c6479cab52a5c1763bd8c7",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544134794,
+                    "data_size": 4397,
+                    "description": "{\"submit_id\": \"0xb90c0c5bd3aa40d5853ad403326d3215\", \"predict_id\": \"0x5e80337f3cb34b20acd227683c54c7f1\", \"submitter_id\": \"0x44c6bc246a8f48da8ab3d04cecac8f9e\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1544137165,
+                    "name": "ForwardRethinking-tfidf_baseline_eval_dev-results",
+                    "remote": "ip-172-31-47-16",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1544137142,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 17.0354859829
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x425794ed18c6479cab52a5c1763bd8c7"
+            },
+            "scores": {
+                "end_acc": 0.5577485380116959,
+                "ew": 0.14707620914997763,
+                "ew_opt": 0.5511078460873216,
+                "first_acc": 0.03630604288499025
+            },
+            "submission": {
+                "created": 1543697318,
+                "description": "TF-IDF Thresh (CMSC723 ForwardRethinking)",
+                "num_period_submissions": 2,
+                "num_total_submissions": 2,
+                "public": true,
+                "user_name": "ForwardRethinking"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x058290be8c7b492598924c98d47150e6/scores.json \"python dummy_evalutae.py\" --request-cpus 1 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": "0xf5e1e8d778aacccd6dfd90f333ccdf3e5a829efb",
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0x79e005cd80404d368fa4eec8b2e0336d",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0x79e005cd80404d368fa4eec8b2e0336d",
+                        "parent_name": "curry-inadequate_dan_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x058290be8c7b492598924c98d47150e6"
+                    }
+                ],
+                "id": "0x79e005cd80404d368fa4eec8b2e0336d",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544134783,
+                    "data_size": 4397,
+                    "description": "{\"submit_id\": \"0x41e3437f1ee0404d8635eda9232687c8\", \"predict_id\": \"0x058290be8c7b492598924c98d47150e6\", \"submitter_id\": \"0x3c8242cc96274660aafba74dbb6d9e54\"}",
+                    "docker_image": "codalab/default-cpu@sha256:bb268d5e752381684fbfc38d0aab8f67021a2b62d2c3f4c87b933c20d0c7ffb6",
+                    "exitcode": 0,
+                    "last_updated": 1544134965,
+                    "name": "curry-inadequate_dan_eval_dev-results",
+                    "remote": "ip-172-31-47-16",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1544134936,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 20.6773560047
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x79e005cd80404d368fa4eec8b2e0336d"
+            },
+            "scores": {
+                "end_acc": 0.43689083820662766,
+                "ew": 0.0949058906488169,
+                "ew_opt": 0.4962191507805189,
+                "first_acc": 0.03167641325536062
+            },
+            "submission": {
+                "created": 1542671362,
+                "description": "Less Than Adequate DAN (CMSC723 Iota)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "curry"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x7908681e2b1b45fcbd83d434eb81fcf0/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xbfa6a306cac84b31a1a175df938a48e7",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xbfa6a306cac84b31a1a175df938a48e7",
+                        "parent_name": "ForwardRethinking-dan_glove300_tfidf_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x7908681e2b1b45fcbd83d434eb81fcf0"
+                    }
+                ],
+                "id": "0xbfa6a306cac84b31a1a175df938a48e7",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544565759,
+                    "description": "{\"submit_id\": \"0x106f467e6b5649fd9c32f9732ba471ec\", \"predict_id\": \"0x7908681e2b1b45fcbd83d434eb81fcf0\", \"submitter_id\": \"0x44c6bc246a8f48da8ab3d04cecac8f9e\"}",
+                    "name": "ForwardRethinking-dan_glove300_tfidf_eval_dev-results",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "tags": [
+                        "qanta-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "created",
+                "uuid": "0xbfa6a306cac84b31a1a175df938a48e7"
+            },
+            "scores": {
+                "end_acc": 0.6040448343079922,
+                "ew": 0.20066982679827378,
+                "ew_opt": 0.5937040126787742,
+                "first_acc": 0.08771929824561403
+            },
+            "submission": {
+                "created": 1544488589,
+                "description": "GLOVE_300 DAN+TFIDF (CMSC723 ForwardRethinking)",
+                "num_period_submissions": 2,
+                "num_total_submissions": 4,
+                "public": true,
+                "user_name": "ForwardRethinking"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0xab4a2eb98a1f4a9dbd32dd697a35ec26/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xbee6c89e6a924693845c701687f2ea4e",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xbee6c89e6a924693845c701687f2ea4e",
+                        "parent_name": "ForwardRethinking-dantf_step_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0xab4a2eb98a1f4a9dbd32dd697a35ec26"
+                    }
+                ],
+                "id": "0xbee6c89e6a924693845c701687f2ea4e",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544565762,
+                    "description": "{\"submit_id\": \"0xd89af41f04ae4845b98bda92c6f55170\", \"predict_id\": \"0xab4a2eb98a1f4a9dbd32dd697a35ec26\", \"submitter_id\": \"0x44c6bc246a8f48da8ab3d04cecac8f9e\"}",
+                    "name": "ForwardRethinking-dantf_step_eval_dev-results",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "tags": [
+                        "qanta-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "created",
+                "uuid": "0xbee6c89e6a924693845c701687f2ea4e"
+            },
+            "scores": {
+                "end_acc": 0.6091617933723197,
+                "ew": 0.264764072724967,
+                "ew_opt": 0.5934221081483644,
+                "first_acc": 0.06895711500974659
+            },
+            "submission": {
+                "created": 1544475473,
+                "description": "DAN-TFIDF Buzzer (CMSC723 ForwardRethinking)",
+                "num_period_submissions": 2,
+                "num_total_submissions": 4,
+                "public": true,
+                "user_name": "ForwardRethinking"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0xcc20e28bbad0475b9eafddeb68d1c5fd/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xf42cfd05ffc74dd4ad8d25d20520b56c",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xf42cfd05ffc74dd4ad8d25d20520b56c",
+                        "parent_name": "sweta20-dan_eval_dev_2-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0xcc20e28bbad0475b9eafddeb68d1c5fd"
+                    }
+                ],
+                "id": "0xf42cfd05ffc74dd4ad8d25d20520b56c",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544565771,
+                    "description": "{\"submit_id\": \"0xff0bc40fcb1047d7b5f476330667c892\", \"predict_id\": \"0xcc20e28bbad0475b9eafddeb68d1c5fd\", \"submitter_id\": \"0xdf98cbcb11d941bda457f28dc60d8396\"}",
+                    "name": "sweta20-dan_eval_dev_2-results",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "tags": [
+                        "qanta-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "created",
+                "uuid": "0xf42cfd05ffc74dd4ad8d25d20520b56c"
+            },
+            "scores": {
+                "end_acc": 0.5589668615984406,
+                "ew": 0.2705000512401651,
+                "ew_opt": 0.5886136204935547,
+                "first_acc": 0.10428849902534112
+            },
+            "submission": {
+                "created": 1544477875,
+                "description": "SBQA (CMSC723 Technical Wizards)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 4,
+                "public": true,
+                "user_name": "sweta20"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x84c19bfa102d404c88bab97f98e954ef/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0x3f08984776004d8c91879f6770be2e7e",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0x3f08984776004d8c91879f6770be2e7e",
+                        "parent_name": "umd723wt-baseline_guess_test-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x84c19bfa102d404c88bab97f98e954ef"
+                    }
+                ],
+                "id": "0x3f08984776004d8c91879f6770be2e7e",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544642179,
+                    "description": "{\"submit_id\": \"0x315765e2816947baaa92d9206685ad39\", \"predict_id\": \"0x84c19bfa102d404c88bab97f98e954ef\", \"submitter_id\": \"0x21a479347ba04929b2cf2d0cbbc6609c\"}",
+                    "name": "umd723wt-baseline_guess_test-results",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "tags": [
+                        "qanta-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "created",
+                "uuid": "0x3f08984776004d8c91879f6770be2e7e"
+            },
+            "scores": {
+                "end_acc": 0.4685672514619883,
+                "ew": 0.19280522193744132,
+                "ew_opt": 0.5131763401549614,
+                "first_acc": 0.0533625730994152
+            },
+            "submission": {
+                "created": 1544589848,
+                "description": "TFIDF Guesser (CMSC723 Working Title)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "umd723wt"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x33ab6a563d27457ba5c1d3a574f4e670/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "FYY-BitER_the_dusT_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x33ab6a563d27457ba5c1d3a574f4e670"
+                    }
+                ],
+                "id": "0xfac873603e634f9f9ce6208f53f14a11",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544642195,
+                    "description": "{\"submit_id\": \"0x73b9d661edef474aa235fadee22f4682\", \"predict_id\": \"0x33ab6a563d27457ba5c1d3a574f4e670\", \"submitter_id\": \"0x562354a802144b10a9ad72af66653eb3\"}",
+                    "failure_message": "Failed to download dependency scores.json: ",
+                    "last_updated": 1544642466,
+                    "name": "FYY-BitER_the_dusT_eval_dev-results",
+                    "remote": "vm-clws-prod-gpuworker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1544642459,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 6.4102101326
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0xfac873603e634f9f9ce6208f53f14a11"
+            },
+            "scores": {
+                "end_acc": 0.672270955165692,
+                "ew": 0.29136236874294397,
+                "ew_opt": 0.6176325625605227,
+                "first_acc": 0.1189083820662768 
+            },
+            "submission": {
+                "created": 1544502062,
+                "description": "BitER_the_dusT (FYY)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 2,
+                "public": false,
+                "user_name": "FYY"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x33ab6a563d27457ba5c1d3a574f4e670/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "FYY-BitER_the_dusT_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x33ab6a563d27457ba5c1d3a574f4e670"
+                    }
+                ],
+                "id": "0xfac873603e634f9f9ce6208f53f14a11",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544642195,
+                    "description": "{\"submit_id\": \"0x73b9d661edef474aa235fadee22f4682\", \"predict_id\": \"0x33ab6a563d27457ba5c1d3a574f4e670\", \"submitter_id\": \"0x562354a802144b10a9ad72af66653eb3\"}",
+                    "failure_message": "Failed to download dependency scores.json: ",
+                    "last_updated": 1544642466,
+                    "name": "FYY-BitER_the_dusT_eval_dev-results",
+                    "remote": "vm-clws-prod-gpuworker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1544642459,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 6.4102101326
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0xfac873603e634f9f9ce6208f53f14a11"
+            },
+            "scores": {
+                "end_acc": 0.6219367865,
+                "ew": 0.2193591678,
+                "ew_opt": 0.5506653856,
+                "first_acc": 0.08316040115 
+            },
+            "submission": {
+                "created": 1544502062,
+                "description": "* BitER_the_dusT (FYY)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 2,
+                "public": false,
+                "user_name": "FYY adversarial"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x33ab6a563d27457ba5c1d3a574f4e670/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "FYY-BitER_the_dusT_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x33ab6a563d27457ba5c1d3a574f4e670"
+                    }
+                ],
+                "id": "0xfac873603e634f9f9ce6208f53f14a11",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544642195,
+                    "description": "{\"submit_id\": \"0x73b9d661edef474aa235fadee22f4682\", \"predict_id\": \"0x33ab6a563d27457ba5c1d3a574f4e670\", \"submitter_id\": \"0x562354a802144b10a9ad72af66653eb3\"}",
+                    "failure_message": "Failed to download dependency scores.json: ",
+                    "last_updated": 1544642466,
+                    "name": "FYY-BitER_the_dusT_eval_dev-results",
+                    "remote": "vm-clws-prod-gpuworker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1544642459,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 6.4102101326
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0xfac873603e634f9f9ce6208f53f14a11"
+            },
+            "scores": {
+                "end_acc": 0.6183564477,
+                "ew": 0.2243049939,
+                "ew_opt": 0.5512455232,
+                "first_acc": 0.0821136696
+            },
+            "submission": {
+                "created": 1544502062,
+                "description": "* SBQA (CMSC723 Technical Wizards)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 2,
+                "public": false,
+                "user_name": "sweta20 adversarial"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x33ab6a563d27457ba5c1d3a574f4e670/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "FYY-BitER_the_dusT_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x33ab6a563d27457ba5c1d3a574f4e670"
+                    }
+                ],
+                "id": "0xfac873603e634f9f9ce6208f53f14a11",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544642195,
+                    "description": "{\"submit_id\": \"0x73b9d661edef474aa235fadee22f4682\", \"predict_id\": \"0x33ab6a563d27457ba5c1d3a574f4e670\", \"submitter_id\": \"0x562354a802144b10a9ad72af66653eb3\"}",
+                    "failure_message": "Failed to download dependency scores.json: ",
+                    "last_updated": 1544642466,
+                    "name": "FYY-BitER_the_dusT_eval_dev-results",
+                    "remote": "vm-clws-prod-gpuworker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1544642459,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 6.4102101326
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0xfac873603e634f9f9ce6208f53f14a11"
+            },
+            "scores": {
+                "end_acc": 0.6167776062,
+                "ew": 0.2188050032,
+                "ew_opt": 0.5503508993,
+                "first_acc": 0.07784729665
+            },
+            "submission": {
+                "created": 1544502062,
+                "description": "* DAN-TFIDF Buzzer (CMSC723 ForwardRethinking)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 2,
+                "public": false,
+                "user_name": "ForwardRethinking adversarial"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x33ab6a563d27457ba5c1d3a574f4e670/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "FYY-BitER_the_dusT_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x33ab6a563d27457ba5c1d3a574f4e670"
+                    }
+                ],
+                "id": "0xfac873603e634f9f9ce6208f53f14a11",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544642195,
+                    "description": "{\"submit_id\": \"0x73b9d661edef474aa235fadee22f4682\", \"predict_id\": \"0x33ab6a563d27457ba5c1d3a574f4e670\", \"submitter_id\": \"0x562354a802144b10a9ad72af66653eb3\"}",
+                    "failure_message": "Failed to download dependency scores.json: ",
+                    "last_updated": 1544642466,
+                    "name": "FYY-BitER_the_dusT_eval_dev-results",
+                    "remote": "vm-clws-prod-gpuworker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1544642459,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 6.4102101326
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0xfac873603e634f9f9ce6208f53f14a11"
+            },
+            "scores": {
+                "end_acc": 0.6018055556,
+                "ew": 0.2136486873,
+                "ew_opt": 0.5438764906,
+                "first_acc": 0.07321380178
+            },
+            "submission": {
+                "created": 1544502062,
+                "description": "* TFIDF Guesser (CMSC723 Working Title)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 2,
+                "public": false,
+                "user_name": "umd723wt adversarial"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run dummy_evalutae.py:0x0d7990b4368344a88c94ee4ed17f8b1e scores.json:0x33ab6a563d27457ba5c1d3a574f4e670/scores.json \"python dummy_evalutae.py\" --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python dummy_evalutae.py",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "dummy_evalutae.py",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "dummy_evaluate.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x0d7990b4368344a88c94ee4ed17f8b1e"
+                    },
+                    {
+                        "child_path": "scores.json",
+                        "child_uuid": "0xfac873603e634f9f9ce6208f53f14a11",
+                        "parent_name": "FYY-BitER_the_dusT_eval_dev-predict",
+                        "parent_path": "scores.json",
+                        "parent_uuid": "0x33ab6a563d27457ba5c1d3a574f4e670"
+                    }
+                ],
+                "id": "0xfac873603e634f9f9ce6208f53f14a11",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1544642195,
+                    "description": "{\"submit_id\": \"0x73b9d661edef474aa235fadee22f4682\", \"predict_id\": \"0x33ab6a563d27457ba5c1d3a574f4e670\", \"submitter_id\": \"0x562354a802144b10a9ad72af66653eb3\"}",
+                    "failure_message": "Failed to download dependency scores.json: ",
+                    "last_updated": 1544642466,
+                    "name": "FYY-BitER_the_dusT_eval_dev-results",
+                    "remote": "vm-clws-prod-gpuworker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1544642459,
+                    "tags": [
+                        "qanta-test-eval"
+                    ],
+                    "time": 6.4102101326
+                },
+                "owner": {
+                    "id": "0xbdcbc9d91d494195b073dd3ad15a53c2",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0xfac873603e634f9f9ce6208f53f14a11"
+            },
+            "scores": {
+                "end_acc": 0.6659195109526236,
+                "ew": 0.541731718,
+                "ew_opt": 0.541731718,
+                "first_acc": 0.6659195109526236
+            },
+            "submission": {
+                "created": 1544502062,
+                "description": "* Benchmark (Human)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 2,
+                "public": false,
+                "user_name": "humans"
             }
         }
     ],
-    "updated": 1542229338.021861
+    "updated": 1544149377.333984
 }
